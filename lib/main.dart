@@ -63,18 +63,21 @@ class MainApp extends StatelessWidget {
       bottomNavigationBar: Obx(
       () {
         return BottomNavigationBar(
-          selectedItemColor: Pallete.lightBlue,
+           
+            backgroundColor: Colors.black,
+            selectedItemColor: Pallete.lightBlue,
+            
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.chat_bubble), label: 'Chat'),
+                  BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Call'),
+              BottomNavigationBarItem(icon: Icon(Icons.face), label: 'Profile'),
+            ],
+            currentIndex: _controller._currentNavIndex.value,
+            onTap: (int tappedIndex) {
+              _controller._currentNavIndex.value = tappedIndex;
+            },
           
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                icon: Icon(Icons.chat_bubble), label: 'Chat'),
-                BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Call'),
-            BottomNavigationBarItem(icon: Icon(Icons.face), label: 'Profile'),
-          ],
-          currentIndex: _controller._currentNavIndex.value,
-          onTap: (int tappedIndex) {
-            _controller._currentNavIndex.value = tappedIndex;
-          },
         );
       },
     ));
