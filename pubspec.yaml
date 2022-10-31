@@ -44,6 +44,9 @@ dependencies:
   #getx state management package
   get: ^4.6.5
 
+  # fonts library
+  google_fonts: ^3.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
