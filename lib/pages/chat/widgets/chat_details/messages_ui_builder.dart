@@ -40,6 +40,13 @@ class MessagesUIBuilder extends StatelessWidget {
                         ? MainAxisAlignment.end
                         : MainAxisAlignment.start,
                     children: [
+                      message.sentBy!=contact.id
+                      ?CircleAvatar(
+                        maxRadius: 20,
+                        backgroundImage: NetworkImage(
+                          contact.profilePictureUrl.toString()
+                          ),)
+                      :Container(),
                       ChatBubble(
                         chatText: message.messageText.toString(),
                         sentAt: message.createdAt.toString(),
