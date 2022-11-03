@@ -7,6 +7,7 @@ class ChatDetailsPage extends StatelessWidget {
   ChatDetailsPage({super.key,required this.contact});
 
   ChatModel contact;
+  
 
   
 
@@ -23,6 +24,8 @@ class ChatDetailsPage extends StatelessWidget {
           child: Column(
             children: [
               CustomTopBar(contact: contact,),
+              SizedBox(width: screenWidth*0.8,child: Divider(thickness: 3,),),
+              MessagesUIBuilder(contact: contact,),
             ],
           ),
         ),

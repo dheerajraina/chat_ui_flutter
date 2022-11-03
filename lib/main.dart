@@ -21,10 +21,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.dark(
-
-          
-          primary: const Color(0xffbb86fc),
+            colorScheme: const ColorScheme.dark(
+          primary: Color(0xffbb86fc),
           onPrimary: Colors.black,
           secondary: Color.fromARGB(255, 33, 142, 243),
           onSecondary: Colors.black,
@@ -32,7 +30,6 @@ class MyApp extends StatelessWidget {
           onBackground: Colors.white,
           surface: Color.fromARGB(255, 0, 0, 0),
           onSurface: Colors.white,
-
         )),
         home: const MainApp());
   }
@@ -56,30 +53,24 @@ class MainApp extends StatelessWidget {
     ];
     var size = MediaQuery.of(context).size;
     return Scaffold(
-
-      body: Obx((() => screens[_controller._currentNavIndex.value])),
-      
-      
-      bottomNavigationBar: Obx(
-      () {
-        return BottomNavigationBar(
-           
-            backgroundColor: Colors.black,
-            selectedItemColor: Pallete.lightBlue,
-            
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.chat_bubble), label: 'Chat'),
-                  BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Call'),
-              BottomNavigationBarItem(icon: Icon(Icons.face), label: 'Profile'),
-            ],
-            currentIndex: _controller._currentNavIndex.value,
-            onTap: (int tappedIndex) {
-              _controller._currentNavIndex.value = tappedIndex;
-            },
-          
-        );
-      },
-    ));
+        body: Obx((() => screens[_controller._currentNavIndex.value])),
+        bottomNavigationBar: Obx(
+          () {
+            return BottomNavigationBar(
+              backgroundColor: Colors.black,
+              selectedItemColor: Pallete.lightBlue,
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.chat_bubble), label: 'Chat'),
+                BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Call'),
+                // BottomNavigationBarItem(icon: Icon(Icons.face), label: 'Profile'),
+              ],
+              currentIndex: _controller._currentNavIndex.value,
+              onTap: (int tappedIndex) {
+                _controller._currentNavIndex.value = tappedIndex;
+              },
+            );
+          },
+        ));
   }
 }
