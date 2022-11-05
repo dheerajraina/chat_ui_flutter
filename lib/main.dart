@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
             colorScheme: const ColorScheme.dark(
-          primary: Color(0xffbb86fc),
+          primary: Color.fromARGB(255, 2, 2, 2),
           onPrimary: Colors.black,
           secondary: Color.fromARGB(255, 33, 142, 243),
           onSecondary: Colors.black,

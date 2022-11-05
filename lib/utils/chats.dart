@@ -7,6 +7,31 @@ List chats = [
     "online": true,
     "chats": [
       {
+        "message_text": "And you is your family?",
+        "created_at": "02:18",
+        "sent_by": "1"
+      },
+      {
+        "message_text": "Everyone is just fine",
+        "created_at": "02:18",
+        "sent_by": "1"
+      },
+      {
+        "message_text": "and your family as well",
+        "created_at": "02:16",
+        "sent_by": "2"
+      },
+      {
+        "message_text": "How about you?",
+        "created_at": "02:15",
+        "sent_by": "2"
+      },
+      {
+        "message_text": "Just fine",
+        "created_at": "02:15",
+        "sent_by": "2"
+      },
+      {
         "message_text": "What are you doing",
         "created_at": "02:14",
         "sent_by": "1"
@@ -16,7 +41,8 @@ List chats = [
         "message_text": "Yeah,sure",
         "created_at": "01:30",
         "sent_by": "1"
-      },{
+      },
+      {
         "message_text": "So, see you there",
         "created_at": "01:24",
         "sent_by": "2"

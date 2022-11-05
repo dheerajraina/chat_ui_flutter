@@ -25,8 +25,11 @@ class MessagesUIBuilder extends StatelessWidget {
       // color: Colors.amber,
       height: screenHeight * 0.7,
       width: screenWidth,
+      alignment: Alignment.bottomCenter,
 
       child: ListView.builder(
+        physics:  BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+        shrinkWrap: true,
           itemCount: messages!.length,
           itemBuilder: (context, index) {
             var chatIndex = (messages!.length - 1) - index;
@@ -40,13 +43,13 @@ class MessagesUIBuilder extends StatelessWidget {
                         ? MainAxisAlignment.end
                         : MainAxisAlignment.start,
                     children: [
-                      message.sentBy!=contact.id
-                      ?CircleAvatar(
-                        maxRadius: 20,
-                        backgroundImage: NetworkImage(
-                          contact.profilePictureUrl.toString()
-                          ),)
-                      :Container(),
+                      message.sentBy != contact.id
+                          ? CircleAvatar(
+                              maxRadius: 20,
+                              backgroundImage: NetworkImage(
+                                  contact.profilePictureUrl.toString()),
+                            )
+                          : Container(),
                       ChatBubble(
                         chatText: message.messageText.toString(),
                         sentAt: message.createdAt.toString(),

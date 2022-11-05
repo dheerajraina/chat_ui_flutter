@@ -21,12 +21,27 @@ class ChatDetailsPage extends StatelessWidget {
           width: screenWidth,
           height: screenHeight,
           
-          child: Column(
-            children: [
-              CustomTopBar(contact: contact,),
-              SizedBox(width: screenWidth*0.8,child: Divider(thickness: 3,),),
-              MessagesUIBuilder(contact: contact,),
-            ],
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            child: Column(
+              
+              children: [
+                CustomTopBar(contact: contact,),
+                SizedBox(width: screenWidth*0.8,child: Divider(thickness: 3,),),
+                Column(
+                  children: [
+                    
+                    MessagesUIBuilder(contact: contact,),
+                  ],
+                
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 5),
+                  child: ChatTextFieldUI(),
+                ),
+
+              ],
+            ),
           ),
         ),
       ),
