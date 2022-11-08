@@ -1,10 +1,8 @@
-import 'dart:collection';
-import 'dart:convert';
+
 import 'dart:developer';
 
 import 'package:chat_ui_flutter/models/chat_model.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
+
 import 'package:get/get.dart';
 // import '../../utils/chats.json'as chatFile;
 

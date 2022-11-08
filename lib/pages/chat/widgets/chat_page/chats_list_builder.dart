@@ -1,12 +1,10 @@
 import 'dart:developer';
 
 import 'package:chat_ui_flutter/config/config.dart';
-import 'package:chat_ui_flutter/models/models.dart';
-import 'package:chat_ui_flutter/pages/chat/view/view.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:chat_ui_flutter/models/chat_model.dart';
+import 'package:chat_ui_flutter/pages/chat/view/chat_details_page.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import '../../../../global_widgets/global_widgets.dart';
 
 class ChatsListBuilder extends StatelessWidget {
   ChatsListBuilder({super.key, this.chatslist});
@@ -22,7 +20,7 @@ class ChatsListBuilder extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     log("$chatslist");
-    final _textStyleController=CustomTextStyle(context: context);
+    final _textStyleController = CustomTextStyle(context: context);
     if (chatslist!.isNotEmpty) {
       return ListView.builder(
           itemCount: chatslist!.length,
@@ -30,7 +28,56 @@ class ChatsListBuilder extends StatelessWidget {
             log("${chatslist![index].profilePictureUrl}");
             return Container(
               // color: Colors.red,
-              child: ListTile(
+              child: InkWell(
+                onTap: () => ontapChatTile(context, index),
+                child: CustomUserTile(
+                    profilePicture: chatslist![index].profilePictureUrl,
+                    title: chatslist![index].name,
+                    subtitle: Text(
+                      chatslist![index].chats![0].messageText ?? "",
+                      // subtitle ?? null,
+                      style: _textStyleController.returnStyledTextBodySmall(),
+                    ),
+                    // chatslist![index].chats![0].messageText,
+                    trailing: Text(
+                      chatslist![index].chats![0].createdAt ?? "",
+                      style: _textStyleController.returnStyledTextBodySmall(),
+                    )
+                    // chatslist![index].chats![0].createdAt,
+                    ),
+              ),
+            );
+          });
+
+      //     Text(
+      //   subtitle ?? null,
+      //   style: textStyleController.returnStyledTextBodySmall(),
+      // )
+    }
+    return Container(
+      child: Center(
+        child: Text('No Chats'),
+      ),
+    );
+  }
+
+  ontapChatTile(BuildContext context, int clickedChatIndex) {
+    log("Chat Clicked");
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>
+                ChatDetailsPage(contact: chatslist![clickedChatIndex])));
+  }
+}
+
+
+
+
+/*
+
+ListTile(
 
                 onTap: (() {
                   log("Chat Clicked");
@@ -63,14 +110,6 @@ class ChatsListBuilder extends StatelessWidget {
                   chatslist![index].chats[0].createdAt ?? "No Name",
                   style:  _textStyleController.returnStyledTextBodySmall(),
                 ),
-              ),
-            );
-          });
-    }
-    return Container(
-      child: Center(
-        child: Text('No Chats'),
-      ),
-    );
-  }
-}
+              )
+
+*/

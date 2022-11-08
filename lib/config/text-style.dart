@@ -26,5 +26,8 @@ class CustomTextStyle{
    returnStyledTextHeadline6({Color? color}){
     return GoogleFonts.lato(textStyle: Theme.of(context).textTheme.headline6!.copyWith(color: color));
   }
+  returnStyledTextHeadline5({Color? color}){
+    return GoogleFonts.lato(textStyle: Theme.of(context).textTheme.headline5!.copyWith(color: color));
+  }
   
 }

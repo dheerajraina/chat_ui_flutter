@@ -9,12 +9,12 @@ List chats = [
       {
         "message_text": "And you is your family?",
         "created_at": "02:18",
-        "sent_by": "1"
+        "sent_by": "0"
       },
       {
         "message_text": "Everyone is just fine",
         "created_at": "02:18",
-        "sent_by": "1"
+        "sent_by": "0"
       },
       {
         "message_text": "and your family as well",
@@ -34,13 +34,13 @@ List chats = [
       {
         "message_text": "What are you doing",
         "created_at": "02:14",
-        "sent_by": "1"
+        "sent_by": "0"
       },
       
       {
         "message_text": "Yeah,sure",
         "created_at": "01:30",
-        "sent_by": "1"
+        "sent_by": "0"
       },
       {
         "message_text": "So, see you there",
@@ -66,7 +66,7 @@ List chats = [
       {
         "message_text": "So, see you there",
         "created_at": "01:24",
-        "sent_by":"1"
+        "sent_by":"0"
       }
     ]
   },
@@ -86,7 +86,7 @@ List chats = [
        {
         "message_text": "Hey, How are you",
         "created_at": "12:24",
-        "sent_by": "1"
+        "sent_by": "0"
       }
     ]
   },
@@ -106,7 +106,7 @@ List chats = [
       {
         "message_text": "Hey, How are you",
         "created_at": "12:24",
-        "sent_by": "1"
+        "sent_by": "0"
       }
     ]
   },
@@ -121,7 +121,7 @@ List chats = [
       {
         "message_text": "I am at a party",
         "created_at": "03:50",
-        "sent_by": "1"
+        "sent_by": "0"
       },
        {
         "message_text": "Where are you?",

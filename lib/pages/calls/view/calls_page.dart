@@ -1,12 +1,28 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:chat_ui_flutter/controllers/controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../widgets/widgets.dart';
 
 class CallsPage extends StatelessWidget {
-  const CallsPage({super.key});
+  CallsPage({super.key});
+
+  final callsCtrl = Get.put((CallController()));
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Center(child:Text("Calls Page")),);
+    final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    callsCtrl.getCalls();
+    return SizedBox(
+      height: screenHeight * 0.9,
+      child: Column(
+        children: [
+          TopBar(),
+          CallsListBuilder(
+            callsList: callsCtrl.callsList,
+          ),
+        ],
+      ),
+    );
   }
 }

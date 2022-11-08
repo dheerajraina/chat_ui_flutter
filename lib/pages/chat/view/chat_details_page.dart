@@ -22,7 +22,7 @@ class ChatDetailsPage extends StatelessWidget {
           height: screenHeight,
           
           child: SingleChildScrollView(
-            physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+            
             child: Column(
               
               children: [
